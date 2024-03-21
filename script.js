@@ -78,6 +78,7 @@ document.body.appendChild(buttonContainer);
 const yes = document.createElement("div");
 yes.textContent = "Yes!";
 const no = document.createElement("div");
+no.classList.add("no");
 
 no.textContent = "No :(";
 buttonContainer.appendChild(yes);
@@ -107,20 +108,10 @@ setTimeout(()=> {
     yes.classList.add("button");
     no.classList.add("button");
     yes.addEventListener("click", ()=>{alert("YAY!")});
-    let noClicked = false;
     no.addEventListener("click", ()=> {
-        if (!noClicked) {
-            let fakeno = document.createElement("div");
-            fakeno.textContent = "No :(";
-            fakeno.classList.add("button");
-            fakeno.style.opacity = 0;
-            buttonContainer.appendChild(fakeno);
-            no.style.position = "fixed";
-            noClicked = true;
-        }
         no.style.zIndex = 999998;
         yes.style.zIndex = 999999;
-        no.style.top = Math.random()*(window.innerHeight-no.offsetHeight);
+        no.style.bottom = Math.random()*(window.innerHeight-no.offsetHeight);
         no.style.left= Math.random()*(window.innerWidth-no.offsetWidth);
     })
 }, totalDuration*1000+100)
