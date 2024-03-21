@@ -1,4 +1,4 @@
-body {background-color: pink}
+body {background-color: pink; transition: 0.2s background-color}
 body>div:nth-of-type(1) {display: flex; flex-direction: column; width: 100%; align-items: center}
 body>div:nth-of-type(2) {display: flex; align-items: center; justify-content: space-around; height: 25%; width: 100%}
 body> div:nth-of-type(2) div:not(.button) {display: none}
